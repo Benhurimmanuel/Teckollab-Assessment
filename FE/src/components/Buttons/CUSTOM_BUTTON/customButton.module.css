@@ -1,0 +1,27 @@
+.customBtn {
+    background-color: #624DE3 !important;
+    border-color: #624DE3 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 12px;
+    width: auto;
+    height: auto;
+    opacity: 0.9;
+    transition: background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+}
+
+.customBtn:hover {
+    background-color: #5a3fc4;
+    border-color: #5a3fc4;
+    opacity: 1;
+}
+
+.customBtn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(98, 77, 227, 0.5);
+}
+
+.customBtn:active {
+    background-color: #4e32a6;
+    border-color: #4e32a6;
+    opacity: 0.9;
+}
