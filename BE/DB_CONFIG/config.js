@@ -28,7 +28,7 @@ const sequelize = new Sequelize(
     // await sequelize.sync({ force: true });
 
     // Sync table and alter the schema
-    await sequelize.sync({ alter: true });
+    // await sequelize.sync({ alter: true });
 
     // Sync table
     await sequelize.sync();
