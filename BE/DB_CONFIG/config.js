@@ -1,5 +1,6 @@
 const { Sequelize } = require('sequelize');
 const logger = require('../HELPERS/LOGGER');
+require('dotenv').config();
 
 const sequelize = new Sequelize(
   process.env.DB_DATABASE_NAME,
@@ -32,6 +33,7 @@ const sequelize = new Sequelize(
     // Sync table
     await sequelize.sync();
   } catch (error) {
+    console.log({ error });
     console.error('Database connection unsuccessful');
     logger.error(error);
   }

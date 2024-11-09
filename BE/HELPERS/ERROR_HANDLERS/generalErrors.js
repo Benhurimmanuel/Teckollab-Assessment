@@ -1,9 +1,7 @@
 const logger = require('../LOGGER');
 
 const errorHandler = (error, req, res, next) => {
-  console.log(
-    error,
-  );
+  console.log({ error });
   const response = {
     status: false,
   };

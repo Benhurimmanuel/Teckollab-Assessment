@@ -30,41 +30,4 @@ const devLogger = () => createLogger({
     ],
 });
 
-const productionLogger = () => createLogger({
-    level: logLevel,
-    format: combine(
-        timestamp(),
-        myFormat,
-    ),
-    // defaultMeta: { service: 'user-service' },
-    transports: [
-        //
-        // - Write all logs with importance level of `error` or less to `error.log`
-        // - Write all logs with importance level of `info` or less to `combined.log`
-        //
-        // new winston.transports.File({ filename: 'error.log', level: 'error' }),
-        // new winston.transports.File({ filename: 'combined.log' }),
-        new transports.Console(),
-    ],
-});
-
-const stagingLogger = () => createLogger({
-    level: 'info',
-    format: combine(
-        colorize(),
-        timestamp({ format: errorTimeStampFormat }),
-        myFormat,
-    ),
-    // defaultMeta: { service: 'user-service' },
-    transports: [
-        //
-        // - Write all logs with importance level of `error` or less to `error.log`
-        // - Write all logs with importance level of `info` or less to `combined.log`
-        //
-        new transports.File({ filename: errorLogRoute, level: errorLogLevel }),
-        new transports.File({ filename: infoLogRoute }),
-        new transports.Console(),
-    ],
-});
-
-module.exports = { devLogger, productionLogger, stagingLogger };
+module.exports = { devLogger };
