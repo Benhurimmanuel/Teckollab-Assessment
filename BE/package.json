@@ -4,12 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev_server": "export NODE_ENV=development&&nodemon app.js",
-    "dev": "SET NODE_ENV=development&&nodemon app.js",
-    "production": "export NODE_ENV=production&&node app.js",
-    "test": "export NODE_ENV=test&&nodemon app.js",
-    "lint": "eslint . --ext .js",
-    "lint-fix": "eslint --fix . --ext .js"
+    "dev_server": "export nodemon app.js",
+    "dev": "SET NODE_ENV=development&&nodemon app.js"
   },
   "author": "",
   "license": "ISC",

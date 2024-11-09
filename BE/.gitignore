@@ -1,6 +1,6 @@
 node_modules
 # dotenv environment variables file
-.env.development
+.env
 # Logs
 LOGS
 *.log

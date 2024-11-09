@@ -1,4 +1,4 @@
-require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
+require('dotenv').config();
 const express = require('express');
 require('./DB_CONFIG/config');
 const cors = require('cors');

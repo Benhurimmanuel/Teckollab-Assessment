@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BE_DOMAIN = "http://localhost:5000/api"
+const BE_DOMAIN = "https://teckollab-assessment-be-arbhgmgffcbmbngg.westeurope-01.azurewebsites.net/api"
 const BE_VERSION = "v1"
 const axiosGet = async (url) => {
     try {
