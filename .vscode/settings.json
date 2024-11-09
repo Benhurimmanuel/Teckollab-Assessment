@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/c03bdb45-2c16-4a48-86e5-1136a0781fd2/resourceGroups/teckollab/providers/Microsoft.Web/sites/teckollab",
+    "appService.deploySubpath": "."
+}
