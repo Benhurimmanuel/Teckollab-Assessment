@@ -1,34 +1,38 @@
-const Sequelize = require('sequelize');
+const { Sequelize } = require('sequelize');
 const logger = require('../HELPERS/LOGGER');
+
 const sequelize = new Sequelize(
   process.env.DB_DATABASE_NAME,
   process.env.DB_USERNAME,
   process.env.DB_PASSWORD,
   {
     host: process.env.DB_HOST,
-    dialect: 'postgres',
+    dialect: 'mssql',
     port: process.env.DB_PORT,
     logging: false,
     dialectOptions: {
+      encrypt: true,
       useUTC: false,
     },
     timezone: '+05:30',
   },
 );
+
 (async () => {
   try {
     await sequelize.authenticate();
-    console.info("Database connected Successfully")
-    // clean wipe
+    logger.info('Database connected successfully');
+
+    // Clean wipe (Drop and recreate tables)
     // await sequelize.sync({ force: true });
 
-    // alter Table
+    // Sync table and alter the schema
     await sequelize.sync({ alter: true });
 
-    // sync Table
+    // Sync table
     await sequelize.sync();
   } catch (error) {
-    console.error("Database connection Unsuccessful");
+    console.error('Database connection unsuccessful');
     logger.error(error);
   }
 })();

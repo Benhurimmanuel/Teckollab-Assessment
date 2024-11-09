@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../DB_CONFIG/config');
 
-// Function to generate a random 5-character alphanumeric string
 const generateRandomTrackingId = () => {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
@@ -18,7 +17,7 @@ const Transactions = sequelize.define('Transactions', {
         allowNull: false,
         unique: true,
         primaryKey: true,
-        defaultValue: generateRandomTrackingId, // Custom default value generator
+        // Removed defaultValue here to avoid SQL Server error, because of alter
     },
     product: {
         type: Sequelize.STRING,
@@ -43,7 +42,7 @@ const Transactions = sequelize.define('Transactions', {
     status: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: 'Pending',
+        // Removed defaultValue here to avoid SQL Server error
         validate: {
             isIn: [['Completed', 'Pending', 'Canceled']],
         },
@@ -55,8 +54,15 @@ const Transactions = sequelize.define('Transactions', {
 }, {
     timestamps: true,
 });
+
+// Hook to set default values before creating a new record
 Transactions.beforeCreate((transaction, options) => {
-    transaction.tracking_id = generateRandomTrackingId();
+    if (!transaction.tracking_id) {
+        transaction.tracking_id = generateRandomTrackingId();
+    }
+    if (!transaction.status) {
+        transaction.status = 'Pending'; // Set default 'Pending' if not provided
+    }
 });
 
 module.exports = Transactions;

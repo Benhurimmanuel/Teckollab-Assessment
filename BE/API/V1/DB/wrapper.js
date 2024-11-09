@@ -1,5 +1,6 @@
 const { Op } = require('sequelize');
 const { GENERAL_ORDER_BY } = require('../../../CONSTANTS/wrapperConstants');
+const Transactions = require('../../../MODELS/transactions');
 
 /*
  * @param {tableName, condition, pageNumber, pageSize } string,object,string,string
@@ -60,4 +61,6 @@ const searchTransactions = async (
   }
 };
 
-module.exports = { getAllDataByCondition, searchTransactions };
+module.exports = {
+  getAllDataByCondition, searchTransactions,
+};

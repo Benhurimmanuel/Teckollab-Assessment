@@ -3,7 +3,7 @@ const Transactions = require('../../../../MODELS/transactions');
 const { getAllDataByCondition, searchTransactions } = require('../../DB/wrapper');
 const { handleApiResponse } = require('../../UTILS');
 
-const getAllTransactionsService = async (user, route, accountType, method, pageSize, pageNumber) => {
+const getAllTransactionsService = async (pageSize, pageNumber) => {
     try {
         const responsePayload = await getAllDataByCondition(Transactions, null, pageSize, pageNumber);
         if (responsePayload.status) {
@@ -24,7 +24,7 @@ const getAllTransactionsService = async (user, route, accountType, method, pageS
     }
 };
 
-const searchTransactionsService = async (user, route, accountType, method, pageSize, pageNumber, searchQuery) => {
+const searchTransactionsService = async (pageSize, pageNumber, searchQuery) => {
     try {
         const responsePayload = await searchTransactions(Transactions, searchQuery, pageSize, pageNumber);
         if (responsePayload.status) {
