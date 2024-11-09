@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize');
 const logger = require('../HELPERS/LOGGER');
 require('dotenv').config();
 
-console.log({ DB_DATABASE_NAME: process.env.DB_DATABASE_NAME });
+console.log(5, { DB_DATABASE_NAME: process.env.DB_DATABASE_NAME });
 const sequelize = new Sequelize(
   process.env.DB_DATABASE_NAME,
   process.env.DB_USERNAME,
