@@ -22,7 +22,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Serve React build files
-const buildPath = path.join(__dirname, '../FE', 'dist');
+const buildPath = path.join(__dirname, './FE', 'dist');
 app.use(express.static(buildPath));
 
 // API Routes
