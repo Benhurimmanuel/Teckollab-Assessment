@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './LAYOUT';
 import { CssBaseline, Box } from '@mui/material';
 import { ThemeProviderWrapper } from './CONTEXT';
-import Home from './PAGES/13231';
+import Home from './PAGES/HOMEPAGE';
 
 function App() {
   return (
