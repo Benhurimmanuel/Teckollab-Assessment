@@ -1,6 +1,5 @@
-const { Op } = require('sequelize');
+const { Op, Sequelize } = require('sequelize');
 const { GENERAL_ORDER_BY } = require('../../../CONSTANTS/wrapperConstants');
-const Transactions = require('../../../MODELS/transactions');
 
 /*
  * @param {tableName, condition, pageNumber, pageSize } string,object,string,string
@@ -27,6 +26,7 @@ const getAllDataByCondition = async (
  * @return{result,null} object,null
  * @desc  get data based on searchqeury(parital match-case insesitve) from db
  */
+
 const searchTransactions = async (
   tableName,
   searchQuery,
@@ -38,20 +38,30 @@ const searchTransactions = async (
       where: {
         [Op.or]: [
           {
-            customer: {
-              [Op.iLike]: `%${searchQuery}%`,
-            },
+            [Op.and]: [
+              Sequelize.where(
+                Sequelize.fn('LOWER', Sequelize.col('customer')),
+                {
+                  [Op.like]: `%${searchQuery.toLowerCase()}%`,
+                },
+              ),
+            ],
           },
           {
-            product: {
-              [Op.iLike]: `%${searchQuery}%`,
-            },
+            [Op.and]: [
+              Sequelize.where(
+                Sequelize.fn('LOWER', Sequelize.col('product')),
+                {
+                  [Op.like]: `%${searchQuery.toLowerCase()}%`,
+                },
+              ),
+            ],
           },
         ],
       },
       limit: +pageSize,
       offset: +pageSize * +pageNumber,
-      order: [GENERAL_ORDER_BY],
+      order: [GENERAL_ORDER_BY], // Ensure proper ordering
     });
 
     return { status: !!result, data: result || null };

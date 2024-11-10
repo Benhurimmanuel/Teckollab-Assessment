@@ -29,7 +29,7 @@ The **Teckollab-Assessment** is a full-stack application built with **React** fo
   - PostgreSQL (or MySQL)
 
 - **Database**:
-  - PostgreSQL (or MySQL)
+  - MSSQL (Azure SQL Server)
 
 ---
 
@@ -56,13 +56,15 @@ To set up and run the frontend application locally, follow these steps:
 Start the React development server with:
 
 ```bash
-npm start
+npm install
+npm run dev  
+npm run build
 ```
 
-Your frontend will be available at http://localhost:3000.
+Your frontend will be available at http://localhost:5173.
 
 3. **Available Scripts**
-- npm start: Runs the app in development mode.
+- npm dev: Runs the app in development mode.
 - npm run build: Builds the app for production
 
 
@@ -72,7 +74,6 @@ Go to the backend directory and install the necessary dependencies:
 
 ```bash
 cd BE
-npm install
 ```
 2. **Set up Environment Variables**
 Create a .env file in the root of the backend folder and add your environment variables (e.g., database credentials, BE port Details etc):
@@ -88,6 +89,7 @@ Create a .env file in the root of the backend folder and add your environment va
 Start the backend server with:
 
 ```bash
+npm install
 npm start
 ```
 
