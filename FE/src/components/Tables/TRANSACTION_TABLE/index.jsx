@@ -8,7 +8,7 @@ import { faDollarSign, faEdit, faSort, faTrashCan } from '@fortawesome/free-soli
 import TableHeader from './tableHeader';
 import { useTheme } from '@mui/material/styles';
 import styles from './transactionTable.module.css';
-import { axiosGet } from '../../../utils/axios';
+import { axiosGet } from '../../../UTILS/axios';
 import { TRANSACTION_URL } from '../../../CONSTANTS/apis';
 import TransactionModal from '../../MODALS/transactionModal';
 

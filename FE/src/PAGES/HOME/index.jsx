@@ -1,5 +1,5 @@
 import React from 'react';
-import TransactionsTable from '../../components/Tables/TRANSACTION_TABLE';
+import TransactionsTable from '../../COMPONENTS/Tables/TRANSACTION_TABLE';
 
 const Home = () => {
     return (

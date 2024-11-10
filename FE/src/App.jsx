@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './LAYOUT';
-import Home from './pages/Home';
+import Home from './PAGES/Home';
 import { CssBaseline, Box } from '@mui/material';
-import { ThemeProviderWrapper } from './context/ThemeContext';
+import { ThemeProviderWrapper } from './CONTEXT/ThemeContext';
 
 function App() {
   return (

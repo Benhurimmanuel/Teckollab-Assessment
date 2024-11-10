@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Pagination, PaginationItem, Button, Box, useTheme, CircularProgress } from '@mui/material';
 import styles from './customPagination.module.css';
-import { axiosGet } from '../../utils/axios';
+import { axiosGet } from '../../UTILS/axios';
 
 const CustomPagination = ({
     totalItems,
