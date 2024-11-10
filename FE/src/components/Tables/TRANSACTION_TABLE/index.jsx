@@ -8,9 +8,9 @@ import { faDollarSign, faEdit, faSort, faTrashCan } from '@fortawesome/free-soli
 import TableHeader from './tableHeader';
 import { useTheme } from '@mui/material/styles';
 import styles from './transactionTable.module.css';
-import { axiosGet } from '../../../UTILS/AXIOS';
 import { TRANSACTION_URL } from '../../../CONSTANTS/apis';
 import TransactionModal from '../../MODALS/transactionModal';
+import { axiosGet } from '../../../utils/axios';
 
 const columns = [
     { header: 'tracking_id', label: 'Tracking Id' },

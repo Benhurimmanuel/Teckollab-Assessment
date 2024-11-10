@@ -3,6 +3,7 @@ import globals from 'globals'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import importPlugin from 'eslint-plugin-import'
 
 export default [
   { ignores: ['dist'] },
@@ -22,6 +23,7 @@ export default [
       react,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      import: importPlugin, // Add the import plugin
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -33,6 +35,24 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      // Import plugin rules
+      'import/no-unresolved': 'error', // Ensures that all imports resolve correctly
+      'import/extensions': ['error', 'never', {
+        js: 'never',
+        jsx: 'never',
+      }], // Enforces consistent use of file extensions
+      'import/no-case-sensitive-files': 'error', // Enforces case sensitivity for import paths
+      'import/no-duplicates': 'error', // Ensures there are no duplicate imports
+      'import/order': [
+        'error',
+        {
+          groups: [
+            ['builtin', 'external'],
+            ['internal', 'sibling', 'parent', 'index'],
+          ],
+          'newlines-between': 'always',
+        },
+      ], // Enforces a consistent order of imports
     },
   },
 ]
