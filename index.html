@@ -1,0 +1,38 @@
+const express = require('express');
+require('dotenv').config(); // Load environment variables
+const path = require('path'); // To resolve file paths for static files
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve the index.html when the root URL is accessed
+app.get('/', (req, res) => {
+res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Start server
+app.listen(port, () => {
+console.log(`Server is running on http://localhost:${port}`);
+});
+const express = require('express');
+require('dotenv').config(); // Load environment variables
+const path = require('path'); // To resolve file paths for static files
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve the index.html when the root URL is accessed
+app.get('/', (req, res) => {
+res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Start server
+app.listen(port, () => {
+console.log(`Server is running on http://localhost:${port}`);
+});
