@@ -1,0 +1,2 @@
+[config]
+exclude=node_modules
