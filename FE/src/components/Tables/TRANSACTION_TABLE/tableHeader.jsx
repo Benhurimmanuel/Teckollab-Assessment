@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Box, MenuItem, Select, FormControl, Typography } from '@mui/material';
 import SearchBar from '../../SEARCH';
-import CustomButton from '../../Buttons/CUSTOM_BUTTON';
+import CustomButton from '../../BUTTONS/CUSTOM_BUTTON';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import styles from './tableHeader.module.css';

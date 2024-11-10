@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { useTheme } from '../../../CONTEXT/themeContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
+import { useTheme } from '../../../CONTEXT';
 
 const ThemeToggle = () => {
     const { isDarkMode, toggleTheme } = useTheme();

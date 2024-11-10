@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navbar, Nav, Button } from 'react-bootstrap';
-import { useTheme } from '../../../CONTEXT/themeContext';
 import { faMoon } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
+import { useTheme } from '../../../CONTEXT';
 
 const Custom_Navbar = () => {
     const { isDarkMode, toggleTheme } = useTheme();
