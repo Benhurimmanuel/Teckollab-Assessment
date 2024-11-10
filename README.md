@@ -26,7 +26,7 @@ The **Teckollab-Assessment** is a full-stack application built with **React** fo
   - Node.js
   - Express.js
   - Sequelize ORM (for interacting with the database)
-  - PostgreSQL (or MySQL)
+  - MSSQL (Azure SQL Server)
 
 - **Database**:
   - MSSQL (Azure SQL Server)
