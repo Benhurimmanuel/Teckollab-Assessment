@@ -1,14 +1,15 @@
+/* Styles for the header */
 .transactionHeaderSection {
+    margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
 }
 
 .transactionSortSection {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
+    width: 100%;
 }
 
 .showText {
@@ -17,7 +18,6 @@
 }
 
 .entriesText {
-    margin-left: 8px;
     font-size: 14px;
     font-weight: 400;
 }
@@ -28,15 +28,12 @@
 }
 
 .addButton {
-    display: flex;
-    align-items: center;
-    padding: 8px 16px;
     background-color: #0066cc;
     color: white;
     font-size: 14px;
-    gap: 6px;
     border-radius: 4px;
     transition: background-color 0.3s;
+    width: 100%;
 }
 
 .addButton:hover {

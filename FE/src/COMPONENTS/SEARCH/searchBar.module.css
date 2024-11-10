@@ -1,34 +1,40 @@
-.searchContainer {
-    display: flex;
-    align-items: center;
-    width: 20em;
-    height: 3em;
-    position: relative;
-}
-
+/* Search icon inside the input */
 .searchIcon {
     width: 16px;
     height: 16px;
     color: #9E9E9E;
     margin-left: 8px;
+
 }
 
+.searchInput {
+    width: 20em !important;
+    border-radius: 10px !important;
+}
+
+/* Input field styling */
 .searchInput .MuiOutlinedInput-root {
-    border-radius: 8px;
+    border-radius: 20px !important;
 }
 
+/* Outline of the input field */
 .searchInput .MuiOutlinedInput-notchedOutline {
     border-color: #9E9E9E;
 }
 
+/* Label of the input field */
 .searchInput .MuiInputLabel-root {
     color: #9E9E9E;
 }
 
+/* Styling for the input field itself */
 .searchInput input {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 1em;
     line-height: 15px;
     color: #9E9E9E;
+    padding: 1em;
+    width: 20em !important;
+    /* Ensure proper padding inside the input */
 }

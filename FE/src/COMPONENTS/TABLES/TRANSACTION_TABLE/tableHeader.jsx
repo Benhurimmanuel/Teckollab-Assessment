@@ -9,19 +9,22 @@ import styles from './tableHeader.module.css';
 const TableHeader = ({ searchQuery, onSearchChange, rowsPerPage, onRowsPerPageChange, onAddCustomer }) => {
     return (
         <Box>
-            <Grid container className={styles.transactionHeaderSection}>
-                <Grid item xs={12} sm={8} md={8} container className={styles.transactionSortSection}>
+            <Grid container spacing={2} className={styles.transactionHeaderSection}>
+                {/* Left Section: Show, Rows Per Page, Search Bar */}
+                <Grid item xs={12} sm={8} lg={9} container spacing={2} alignItems="center">
                     <Grid item>
                         <Typography variant="body2" className={styles.showText}>
                             Show
                         </Typography>
                     </Grid>
 
+                    {/* Select for Rows Per Page */}
                     <Grid item>
                         <FormControl variant="outlined" className={styles.selectFormControl}>
                             <Select
                                 value={rowsPerPage}
                                 onChange={(e) => onRowsPerPageChange(e.target.value)}
+                                fullWidth
                             >
                                 <MenuItem value={10}>10</MenuItem>
                                 <MenuItem value={20}>20</MenuItem>
@@ -30,25 +33,30 @@ const TableHeader = ({ searchQuery, onSearchChange, rowsPerPage, onRowsPerPageCh
                         </FormControl>
                     </Grid>
 
+                    {/* Entries Text */}
                     <Grid item>
                         <Typography variant="body2" className={styles.entriesText}>
                             entries
                         </Typography>
                     </Grid>
 
-                    <Grid item xs={12} sm={6} md={6}>
+                    {/* Search Bar */}
+                    <Grid item xs={12} sm={6} md={3}>
                         <SearchBar
                             searchQuery={searchQuery}
-                            onSearchChange={onSearchChange} />
+                            onSearchChange={onSearchChange}
+                        />
                     </Grid>
                 </Grid>
 
-                <Grid item xs={12} sm={4} md={4} container justifyContent="flex-end">
+                {/* Right Section: Add Customer Button */}
+                <Grid item xs={12} sm={4} md={3} lg={3} container justifyContent="flex-end" alignItems="center">
                     <CustomButton
                         onClick={onAddCustomer}
                         className={styles.addButton}
                         variant="contained"
                         color="primary"
+                        fullWidth
                     >
                         <FontAwesomeIcon icon={faPlus} /> Add Customer
                     </CustomButton>

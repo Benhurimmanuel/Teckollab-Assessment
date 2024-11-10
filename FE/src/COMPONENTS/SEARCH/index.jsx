@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { OutlinedInput, InputAdornment } from '@mui/material';
+import { OutlinedInput, InputAdornment, Grid } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import styles from './searchBar.module.css';
@@ -14,20 +14,22 @@ const SearchBox = ({ onSearchChange }) => {
     };
 
     return (
-        <div className={styles.searchContainer}>
-            <OutlinedInput
-                fullWidth
-                placeholder="Search..."
-                value={searchQuery}
-                onChange={handleInputChange}
-                startAdornment={
-                    <InputAdornment position="start">
-                        <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
-                    </InputAdornment>
-                }
-                className={styles.searchInput}
-            />
-        </div>
+        <Grid >
+            <Grid item xs={12} sm={8} md={6} lg={4}>
+                <OutlinedInput
+                    fullWidth
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={handleInputChange}
+                    startAdornment={
+                        <InputAdornment position="start">
+                            <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+                        </InputAdornment>
+                    }
+                    className={styles.searchInput}
+                />
+            </Grid>
+        </Grid>
     );
 };
 
