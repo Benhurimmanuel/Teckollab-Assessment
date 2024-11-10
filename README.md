@@ -1,8 +1,8 @@
-# Transactions Management System
+# Transactions - teckollab assessment
 
 ## Overview
 
-The **Teckollab-Assessment** is a full-stack application built with **React** for the frontend and **Node.js** with **Sequelize ORM** for the backend. This system allows users to manage and view transaction data, including functionality such as search, pagination, and sorting.
+The **Teckollab-Assessment** is a full-stack application built with **React** for the frontend and **Node.js** with **Sequelize ORM** for the backend. This system allows users to view transaction data, including functionality such as search, pagination, and sorting.
 
 ### Features:
 - **Transaction Table**: Displays transaction details such as tracking ID, product, customer, date, amount, payment mode, and status.
