@@ -4,7 +4,7 @@ const path = require('path');
 const cors = require('cors');
 const logger = require('./HELPERS/LOGGER/index');
 // const { errorHandler } = require('./HELPERS/ERROR_HANDLERS/generalErrors');
-// const v1Routes = require('./API/V1/ROUTES');
+const v1Routes = require('./API/V1/ROUTES');
 require('dotenv').config(); // Load environment variables
 
 console.log(10);
@@ -27,7 +27,7 @@ const buildPath = path.join(__dirname, 'FE', 'dist');
 app.use(express.static(buildPath));
 
 // API Routes
-// app.use('/api/v1', v1Routes);
+app.use('/api/v1', v1Routes);
 
 // Serve the index.html when the root URL is accessed (for React app)
 app.get('/', (req, res) => {

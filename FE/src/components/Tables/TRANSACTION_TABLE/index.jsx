@@ -1,14 +1,14 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Table, TableHead, TableBody, TableCell, TableContainer, TableRow, Box, Paper, Grid } from '@mui/material';
-import CustomPagination from '../../Pagination';
-import CustomChip from '../../Chip';
+import CustomPagination from '../../PAGINATION';
+import CustomChip from '../../CHIP';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faEdit, faSort, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 import TableHeader from './tableHeader';
 import { useTheme } from '@mui/material/styles';
 import styles from './transactionTable.module.css';
-import { axiosGet } from '../../../UTILS/axios';
+import { axiosGet } from '../../../UTILS/AXIOS';
 import { TRANSACTION_URL } from '../../../CONSTANTS/apis';
 import TransactionModal from '../../MODALS/transactionModal';
 
