@@ -10,7 +10,7 @@ import { useTheme } from '@mui/material/styles';
 import styles from './transactionTable.module.css';
 import { TRANSACTION_URL } from '../../../CONSTANTS/apis';
 import TransactionModal from '../../MODALS/transactionModal';
-import { axiosGet } from '../../../utils/axios';
+import { axiosGet } from '../../../UTILS/AXIOSs';
 
 const columns = [
     { header: 'tracking_id', label: 'Tracking Id' },
