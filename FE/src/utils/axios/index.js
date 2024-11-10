@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BE_DOMAIN = "https://teckollab.azurewebsites.net/api"
+const BE_DOMAIN = "https://azure17test.azurewebsites.net/api"
 const BE_VERSION = "v1"
 const axiosGet = async (url) => {
     try {
