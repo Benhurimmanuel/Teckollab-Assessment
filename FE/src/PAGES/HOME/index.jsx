@@ -1,6 +1,5 @@
 import React from 'react';
-import TransactionModal from '../../COMPONENTS/MODALS/transactionModal';
-
+import TransactionsTable from '../../COMPONENTS/TABLES/TRANSACTION_TABLE';
 const Home = () => {
     return (
         <div>
