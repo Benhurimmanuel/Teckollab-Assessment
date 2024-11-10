@@ -1,0 +1,44 @@
+.transactionHeaderSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.transactionSortSection {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.showText {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.entriesText {
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.selectFormControl {
+    min-width: 80px;
+    margin-right: 16px;
+}
+
+.addButton {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 14px;
+    gap: 6px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.addButton:hover {
+    background-color: #0057b7;
+}
